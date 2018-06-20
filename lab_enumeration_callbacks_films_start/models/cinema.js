@@ -9,7 +9,23 @@ Cinema.prototype.filmTitles = function () {
   return titles;
 };
 
+Cinema.prototype.findFilmTitle = function (title) {
+  const foundFilmByTitle = this.films.find((film) =>{
+    return film.title === title;
+  });
+  return foundFilmByTitle;
+};
 
+Cinema.prototype.filmGenre = function (genre) {
+  const foundGenres = [];
+
+  for (const film of this.films) {
+    if (film.genre === genre) {
+      foundGenres.push(film);
+    }
+  }
+  return foundGenres;
+}
 
 
 
